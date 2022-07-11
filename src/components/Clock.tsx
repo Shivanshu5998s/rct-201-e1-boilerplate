@@ -1,28 +1,33 @@
 import React from "react";
+import useClock from "../hooks/useClock";
 
-type Props = {
+export type Props = {
   //  TODO
+  
+  label? : string,
+  hours? : number,
+  minutes? : number,
+  seconds? : number
 };
 
-const Clock = (props: Props) => {
+export const Clock = (props: Props) => {
+  const { label,hours, minutes, seconds } = props
   return (
     <div data-testid="clock">
       <h4 data-testid="clock-label">
-        {/* Label */}
+        {label}
       </h4>
       <span data-testid="clock-hours">
-        {/* Hours */}
+        {hours}
         </span>
         :
       <span data-testid="clock-minutes">
-        {/* Minutes */}
+        {minutes}
       </span>
        :
       <span data-testid="clock-seconds">
-        {/* Seconds */}
+        {seconds}
         </span>
     </div>
   );
 };
-
-export default Clock;
